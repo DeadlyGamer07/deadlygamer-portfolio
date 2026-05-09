@@ -1,160 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>DeadlyGamer Portfolio</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:Arial,sans-serif;
     }
 
     body{
-      background:#0d0d0d;
+      background:#0a0a0a;
       color:white;
       overflow-x:hidden;
     }
 
     header{
       text-align:center;
-      padding:60px 20px;
-      background:linear-gradient(135deg,#111,#1a1a1a);
-      border-bottom:2px solid #6a00ff;
+      padding:70px 20px;
     }
 
     header h1{
-      font-size:4rem;
+      font-size:5rem;
       color:#b266ff;
-      text-shadow:0 0 15px #8a2be2;
-      letter-spacing:3px;
+      text-shadow:0 0 25px #8a2be2;
+      letter-spacing:4px;
     }
 
     header p{
-      margin-top:10px;
-      color:#ccc;
+      margin-top:15px;
+      color:#9e9e9e;
       font-size:1.1rem;
     }
 
     .portfolio{
-      width:90%;
+      width:92%;
       margin:auto;
-      padding:50px 0;
+      padding-bottom:60px;
+
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
       gap:30px;
     }
 
     .card{
-      background:#151515;
-      border-radius:20px;
+      position:relative;
       overflow:hidden;
+      border-radius:24px;
+      background:#111;
+      border:1px solid rgba(255,255,255,0.05);
       transition:0.4s;
-      border:1px solid #2a2a2a;
-      box-shadow:0 0 20px rgba(128,0,255,0.15);
+      box-shadow:0 0 25px rgba(128,0,255,0.1);
     }
 
     .card:hover{
-      transform:translateY(-10px) scale(1.03);
-      box-shadow:0 0 30px rgba(183,0,255,0.5);
+      transform:translateY(-8px);
+      box-shadow:0 0 40px rgba(178,102,255,0.35);
     }
 
     .card img{
       width:100%;
-      height:300px;
+      height:420px;
       object-fit:cover;
+      display:block;
     }
 
-    .card-content{
-      padding:20px;
+    .overlay{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      padding:25px;
+      background:linear-gradient(
+        transparent,
+        rgba(0,0,0,0.95)
+      );
     }
 
-    .card-content h2{
-      color:#d18cff;
-      margin-bottom:10px;
-      font-size:1.5rem;
-    }
-
-    .card-content p{
-      color:#bdbdbd;
-      line-height:1.5;
+    .overlay h2{
+      font-size:1.6rem;
+      color:white;
     }
 
     footer{
       text-align:center;
-      padding:25px;
-      border-top:1px solid #222;
-      color:#777;
-      margin-top:40px;
+      padding:30px;
+      color:#666;
+      border-top:1px solid #1a1a1a;
     }
 
-    ::-webkit-scrollbar{
-      width:10px;
-    }
-
-    ::-webkit-scrollbar-thumb{
-      background:#7b2cff;
-      border-radius:10px;
-    }
   </style>
+
 </head>
 
 <body>
 
   <header>
     <h1>DeadlyGamer Portfolio</h1>
-    <p>Graphic Designer • Gaming Designs • Neon Aesthetic</p>
+    <p>Gaming Graphics • Neon Aesthetic • Portfolio</p>
   </header>
 
   <section class="portfolio">
 
     <div class="card">
-      <img src="images/ns-logo.png" alt="NS Logo">
-      <div class="card-content">
-        <h2>NS Cyber Design</h2>
-        <p>Neon cyberpunk styled logo with glowing effects and futuristic vibes.</p>
+      <img src="images/valorant.png">
+      <div class="overlay">
+        <h2>Valorant JET</h2>
       </div>
     </div>
 
     <div class="card">
-      <img src="images/dark-defenders.png" alt="Dark Defenders">
-      <div class="card-content">
-        <h2>Dark Defenders</h2>
-        <p>Minimal dark aesthetic logo with glowing handwritten typography.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/neon-sanctuary.png" alt="Neon Sanctuary">
-      <div class="card-content">
-        <h2>Neon Sanctuary</h2>
-        <p>Purple neon themed gaming community artwork with fantasy atmosphere.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/ir-design.png" alt="IR Design">
-      <div class="card-content">
+      <img src="images/ir.png">
+      <div class="overlay">
         <h2>IR Design</h2>
-        <p>Soft pastel styled logo edit with modern glowing typography.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="images/valorant-jet.png" alt="Valorant Jet">
-      <div class="card-content">
-        <h2>Valorant Jet</h2>
-        <p>Gaming poster inspired by Valorant with blue energy effects.</p>
+      <img src="images/neon.gif">
+      <div class="overlay">
+        <h2>Neon Sanctuary</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/ns.png">
+      <div class="overlay">
+        <h2>NS Cyber Design</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/dark.gif">
+      <div class="overlay">
+        <h2>Dark Defenders</h2>
       </div>
     </div>
 
   </section>
 
   <footer>
-    © 2026 DeadlyGamer Portfolio
+    © 2026 DeadlyGamer
   </footer>
 
 </body>
