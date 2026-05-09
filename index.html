@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DeadlyGamer Portfolio</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#080808;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      text-align:center;
+      padding:70px 20px;
+    }
+
+    header h1{
+      font-size:5rem;
+      color:#c084ff;
+      text-shadow:0 0 30px #9333ea;
+      letter-spacing:4px;
+    }
+
+    header p{
+      color:#9f9f9f;
+      margin-top:15px;
+      font-size:1.1rem;
+    }
+
+    .portfolio{
+      width:92%;
+      margin:auto;
+      padding:30px 0 80px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#111;
+      border-radius:24px;
+      overflow:hidden;
+      position:relative;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 0 25px rgba(168,85,247,0.08);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 40px rgba(168,85,247,0.35);
+    }
+
+    .card img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      padding:25px;
+      background:linear-gradient(
+        transparent,
+        rgba(0,0,0,0.95)
+      );
+    }
+
+    .overlay h2{
+      font-size:1.7rem;
+      color:white;
+      text-shadow:0 0 10px rgba(255,255,255,0.4);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#666;
+      border-top:1px solid #1a1a1a;
+    }
+
+    ::-webkit-scrollbar{
+      width:10px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:#9333ea;
+      border-radius:20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>DeadlyGamer</h1>
+    <p>Gaming Graphics • Neon Aesthetic • Portfolio</p>
+  </header>
+
+  <section class="portfolio">
+
+    <div class="card">
+      <img src="images/valorant.png" alt="">
+      <div class="overlay">
+        <h2>Valorant JET</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/ir.png" alt="">
+      <div class="overlay">
+        <h2>IR Design</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/neon.gif" alt="">
+      <div class="overlay">
+        <h2>Neon Sanctuary</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/ns.png" alt="">
+      <div class="overlay">
+        <h2>NS Cyber Design</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/dark.gif" alt="">
+      <div class="overlay">
+        <h2>Dark Defenders</h2>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 DeadlyGamer
+  </footer>
+
+</body>
+</html>
