@@ -1,153 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeadlyGamer Portfolio</title>
 
-  <title>DeadlyGamer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#ff2d55;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff2d55;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:120px 20px 60px;
+    background:
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95)),
+    url("dark.gif");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:75px;
+    font-weight:700;
+    text-shadow:0 0 20px #ff2d55;
+}
+
+.hero p{
+    margin-top:18px;
+    max-width:700px;
+    color:#bdbdbd;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:35px;
+    padding:14px 35px;
+    background:#ff2d55;
+    border-radius:40px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #ff2d55;
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+}
+
+/* GRID */
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(255,45,85,0.3);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.card-content p{
+    color:#9e9e9e;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#777;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:50px;
     }
 
-    body{
-      background:#0a0a0a;
-      color:white;
-      overflow-x:hidden;
+    .hero p{
+        font-size:15px;
     }
 
-    header{
-      text-align:center;
-      padding:70px 20px;
-    }
+}
 
-    header h1{
-      font-size:5rem;
-      color:#b266ff;
-      text-shadow:0 0 25px #8a2be2;
-      letter-spacing:4px;
-    }
-
-    header p{
-      margin-top:15px;
-      color:#9e9e9e;
-      font-size:1.1rem;
-    }
-
-    .portfolio{
-      width:92%;
-      margin:auto;
-      padding-bottom:60px;
-
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      position:relative;
-      overflow:hidden;
-      border-radius:24px;
-      background:#111;
-      border:1px solid rgba(255,255,255,0.05);
-      transition:0.4s;
-      box-shadow:0 0 25px rgba(128,0,255,0.1);
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 40px rgba(178,102,255,0.35);
-    }
-
-    .card img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .overlay{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      padding:25px;
-      background:linear-gradient(
-        transparent,
-        rgba(0,0,0,0.95)
-      );
-    }
-
-    .overlay h2{
-      font-size:1.6rem;
-      color:white;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      color:#666;
-      border-top:1px solid #1a1a1a;
-    }
-
-  </style>
-
+</style>
 </head>
-
 <body>
 
-  <header>
-    <h1>DeadlyGamer Portfolio</h1>
-    <p>Gaming Graphics • Neon Aesthetic • Portfolio</p>
-  </header>
+<!-- NAVBAR -->
 
-  <section class="portfolio">
+<nav>
 
-    <div class="card">
-      <img src="dark.gif">
-      <div class="overlay">
-        <h2>Dark Defenders</h2>
-      </div>
+    <div class="logo">DG</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>DeadlyGamer</h1>
+
+    <p>
+        Creative graphic designer focused on gaming visuals,
+        cinematic edits, thumbnails, Discord branding,
+        and dark neon aesthetics.
+    </p>
+
+    <a href="#portfolio" class="btn">
+        View Portfolio
+    </a>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="section" id="portfolio">
+
+    <h2 class="section-title">My Portfolio</h2>
+
+    <div class="portfolio-grid">
+
+        <!-- IMAGE 1 -->
+
+        <div class="card">
+
+            <img src="dark.gif" alt="Dark Design">
+
+            <div class="card-content">
+
+                <h3>Dark Design</h3>
+
+                <p>
+                    Animated dark themed visual with cinematic atmosphere
+                    and glowing effects.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGE 2 -->
+
+        <div class="card">
+
+            <img src="ir.png" alt="IR Design">
+
+            <div class="card-content">
+
+                <h3>IR Artwork</h3>
+
+                <p>
+                    Modern graphic composition with sharp effects
+                    and premium styling.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGE 3 -->
+
+        <div class="card">
+
+            <img src="neon.gif" alt="Neon Design">
+
+            <div class="card-content">
+
+                <h3>Neon Animation</h3>
+
+                <p>
+                    Neon inspired animated artwork with futuristic
+                    visuals and smooth lighting.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGE 4 -->
+
+        <div class="card">
+
+            <img src="ns.png" alt="Neon Sanctuary">
+
+            <div class="card-content">
+
+                <h3>Neon Sanctuary</h3>
+
+                <p>
+                    Gaming inspired artwork with dark neon aesthetics
+                    and immersive vibes.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGE 5 -->
+
+        <div class="card">
+
+            <img src="valorant.png" alt="Valorant Design">
+
+            <div class="card-content">
+
+                <h3>Valorant Design</h3>
+
+                <p>
+                    Valorant themed design with cinematic editing,
+                    glowing effects, and modern composition.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-      <img src="ir.png">
-      <div class="overlay">
-        <h2>IR Design</h2>
-      </div>
-    </div>
+</section>
 
-    <div class="card">
-      <img src="neon.gif">
-      <div class="overlay">
-        <h2>Neon Sanctuary</h2>
-      </div>
-    </div>
+<!-- FOOTER -->
 
-    <div class="card">
-      <img src="ns.png">
-      <div class="overlay">
-        <h2>NS Cyber Design</h2>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="valorant.png">
-      <div class="overlay">
-        <h2>Dark Defenders</h2>
-      </div>
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 DeadlyGamer
-  </footer>
+<footer>
+    © 2026 DeadlyGamer Portfolio
+</footer>
 
 </body>
 </html>
